@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="no-referrer" />
+  <title>Marvel Cinematic Universe Information System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Marvel:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦸</text></svg>" />
+</head>
+<body>
+
+  <!-- ══════════  NAVBAR  ══════════ -->
+  <header class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="#home" class="logo">MARVEL</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active" data-section="home">Home</a>
+        <a href="#characters" class="nav-link" data-section="characters">Characters</a>
+        <a href="#movies" class="nav-link" data-section="movies">Movies</a>
+        <a href="#compare" class="nav-link" data-section="compare">Compare</a>
+        <a href="#quiz" class="nav-link" data-section="quiz">Quiz</a>
+        <a href="#stones" class="nav-link" data-section="stones">Stones</a>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ══════════  HERO  ══════════ -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1 class="hero-title">MARVEL</h1>
+      <h2 class="hero-subtitle">CINEMATIC UNIVERSE</h2>
+      <p class="hero-desc">
+        Enter the Marvel Cinematic Universe — a legendary saga where heroes rise,
+        villains challenge destiny, and epic battles shape the fate of the universe.
+        Discover iconic characters, explore blockbuster movies, and experience the
+        stories that changed modern cinema forever.
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="hero-stat-num" id="statChars">35</span><span class="hero-stat-label">Characters</span></div>
+        <div class="hero-stat"><span class="hero-stat-num" id="statMovies">27</span><span class="hero-stat-label">Movies</span></div>
+        <div class="hero-stat"><span class="hero-stat-num" id="statPhases">5</span><span class="hero-stat-label">Phases</span></div>
+      </div>
+      <a href="#characters" class="hero-btn">Explore Characters</a>
+    </div>
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+  </section>
+
+  <!-- ══════════  CHARACTERS  ══════════ -->
+  <section class="section section-gray" id="characters">
+    <div class="container">
+      <h2 class="section-title">Marvel Characters</h2>
+      <p class="section-subtitle">Meet the iconic heroes and villains of the MCU</p>
+      <div class="snap-controls">
+        <button class="snap-btn" id="snapBtn" title="Thanos Snap — Eliminate half of all characters">👊 SNAP</button>
+        <button class="snap-btn reverse" id="reverseSnapBtn" title="Reverse the Snap — Restore all characters">✋ REVERSE</button>
+      </div>
+      <div class="filter-bar" id="charFilterBar">
+        <!-- filters rendered by JS -->
+      </div>
+      <div class="char-grid" id="charactersGrid">
+        <!-- rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════  MOVIES  ══════════ -->
+  <section class="section" id="movies">
+    <div class="container">
+      <h2 class="section-title">Marvel Movies</h2>
+      <p class="section-subtitle">The films that built the Marvel Cinematic Universe</p>
+      <div class="filter-bar" id="movieFilterBar">
+        <!-- filters rendered by JS -->
+      </div>
+      <div class="movie-list" id="moviesList">
+        <!-- rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════  COMPARE  ══════════ -->
+  <section class="section section-gray" id="compare">
+    <div class="container">
+      <h2 class="section-title">Compare Characters</h2>
+      <p class="section-subtitle">Put two heroes or villains head-to-head</p>
+      <div class="compare-selectors">
+        <div class="compare-select-box">
+          <label>Fighter 1</label>
+          <select id="compare1"></select>
+        </div>
+        <div class="compare-vs">VS</div>
+        <div class="compare-select-box">
+          <label>Fighter 2</label>
+          <select id="compare2"></select>
+        </div>
+      </div>
+      <div class="compare-result" id="compareResult">
+        <p class="compare-placeholder">Select two characters above to compare their stats</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════  QUIZ  ══════════ -->
+  <section class="section" id="quiz">
+    <div class="container">
+      <h2 class="section-title">MCU Quiz</h2>
+      <p class="section-subtitle">Test your Marvel knowledge!</p>
+      <div class="quiz-container" id="quizContainer">
+        <div class="quiz-start-screen" id="quizStart">
+          <div class="quiz-start-icon">🧠</div>
+          <h3>Are You a True Marvel Fan?</h3>
+          <p>10 challenging questions about the Marvel Cinematic Universe</p>
+          <button class="btn-primary quiz-start-btn" id="quizStartBtn">Start Quiz</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════  INFINITY STONES  ══════════ -->
+  <section class="section section-dark" id="stones">
+    <div class="container">
+      <h2 class="section-title stones-title">Infinity Stones</h2>
+      <p class="section-subtitle stones-subtitle">The six singularities that control the fabric of the universe</p>
+      <div class="stones-grid" id="stonesGrid"></div>
+      <div class="stone-detail-panel" id="stoneDetailPanel"></div>
+    </div>
+  </section>
+
+  <!-- Screen Effects -->
+  <div class="screen-flash" id="screenFlash"></div>
+  <div class="snap-overlay" id="snapOverlay"></div>
+  <div class="snap-screen-darken"></div>
+
+  <!-- ══════════  FOOTER  ══════════ -->
+  <footer class="footer">
+    <div class="footer-logo">MARVEL</div>
+    <p class="footer-project">Marvel Cinematic Universe Information System &mdash; Mini Project</p>
+    <div class="footer-credits">
+      <p class="footer-dev">Developed by <strong>Chakradhar Sanapala</strong></p>
+      <div class="footer-contact">
+        <span>✉ <a href="mailto:chakrisanapala8@gmail.com">chakrisanapala8@gmail.com</a></span>
+        <span>📞 7780348828</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
+
